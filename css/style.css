@@ -1,171 +1,204 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    }
-  body {
-    overflow-x: hidden;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  @font-face {
-    font-family: 'Porsche Next';
-    src: url('../misc/porsche-next.otf');
-  }
+/* Body */
+body {
+  overflow-x: hidden;
+}
 
-  a {
-    text-decoration: none;
-    color: white;
-  }
+/* Fonts */
+@font-face {
+  font-family: 'Porsche Next';
+  src: url('../misc/porsche-next.otf');
+}
 
-  /* Navbar */
-  header {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 90px;
-    background: #000000;
-  }
-  #nav{
-    position: absolute;
-    height: 100vh;
-    width: 40%;
-    left: -40%;
-    top: 0;
-    background: #ffffff;
-    transition: .3s;
-  }
-  #nav ul{
-    padding-top: 100px;
-  }
-  #nav ul li{
-    list-style-type: none;
+/* Links */
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#nav-header a {
+  color: white;
+  pointer-events: auto;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #000000;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#nav {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100vh;
+  background: #ffffff;
+  transition: .3s;
+  pointer-events: none;
+  z-index: 998;
+}
+
+#nav ul {
+  padding-top: 100px;
+}
+
+#nav ul li {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+#nav a i {
+  margin-left: 10px;
+}
+
+#nav a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  margin: 0 25px;
+  padding: 30px;
+  transition: .5s;
+  font-family: 'Porsche Next', sans-serif;
+  pointer-events: auto;
+}
+
+#nav li a:hover {
+  color: black;
+  background: #ececec;
+  border-bottom: none;
+  border-radius: 5px;
+}
+
+/* Hamburger menu */
+#hamburger {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+  transition: 1s;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+.inner_line {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #ffffff;
+  transition: 1s;
+  border-radius: 4px;
+  pointer-events: auto;
+}
+
+#line1 {
+  top: 0;
+}
+
+#line2 {
+  top: 20px;
+}
+
+#line3 {
+  bottom: 0px;
+}
+
+#nav-header {
+  font-family: '911 Porscha', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 90px;
+  color: #ffffff;
+}
+
+#logo-img {
+  visibility: hidden;
+}
+
+#nav p {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.in {
+  transform: translateX(100%);
+}
+
+.line_1, .line_2, .line_3 {
+  background: #000000;
+}
+
+.line_1 {
+  transform: translateY(20px) rotate(-45deg);
+  top: 0;
+}
+
+.line_2 {
+  opacity: 0;
+}
+
+.line_3 {
+  transform: translateY(-20px) rotate(45deg);
+  bottom: 0;
+}
+
+/* Media queries navbar */
+@media screen and (max-width: 480px) {
+  #nav ul li {
     font-size: 20px;
   }
-  #nav a{
-    display: block;
-    text-decoration: none;
-    color: #000000;
-    margin: 0 25px;
-    padding: 30px;
-    transition: .5s;
-    font-family:'Porsche Next', sans-serif;
+
+  #nav-header a {
+    display: none;
   }
 
-  #nav li a:hover{
-    color: black;
-    background: #ececec;
-    border-bottom: none;
-    border-radius: 5px;
-  }
-  #hamburger {
-    display: block;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    width: 50px;
-    height: 44px;
-    cursor: pointer;
-    transition: 1s;
-  }
-  .inner_line {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: #ffffff;
-    transition: 1s;
-    border-radius: 4px;
-  }
-  #line1 {
-    top: 0;
-  }
-  #line2 {
-    top: 20px;
-  }
-  #line3 {
-    bottom: 0px;
-  }
-
-  #nav-text {
-    font-family: '911 Porscha', sans-serif;
-    font-weight: 400;
-  }
-
-  #nav-text {
-    text-align: center;
-    line-height: 90px;
-    color: #ffffff;
+  #nav-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   #logo-img {
-    visibility: hidden;
+    visibility: visible;
+    position: absolute;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+}
 
-  #nav p {
-    padding-top: 200px;
-    text-align: center;
-  }
-  .in{
-    transform: translateX(100%);
-  }
-  .line_1,.line_2,.line_3{
-    background: #000000;
-  }
-  .line_1 {
-    transform: translateY(20px) rotate(-45deg);
-    top: 0;
-  }
-  .line_2 {
-    opacity: 0;
-  }
-  .line_3 {
-    transform: translateY(-20px) rotate(45deg);
-    bottom: 0;
-  }
-  
-  /* Media queries navbar */
-  @media screen and (max-width: 480px) {
-
-    #nav ul li {
-      font-size: 20px;
-    }
-
-    h1 {
-      display: none;
-    }
-
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #logo-img {
-        visibility: visible;
-        position: absolute;
-        height: 80px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-  }
-
-
-  /* About us */
- #about-us-image {
+/* About us */
+#about-us-image {
   width: 100%;
   height: 65vh;
   background-image: url(/img/cls63.jpg);
   object-fit: cover;
-  background-position: center;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   margin-top: 90px;
-  margin-bottom: 100px; 
- }
+  margin-bottom: 100px;
+}
 
- #about-us-image h1 {
+#about-us-image h1 {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -175,48 +208,81 @@
   color: white;
   font-size: 7rem;
   font-weight: lighter;
-  font-family:'Porsche Next', sans-serif;
- }
+  font-family: 'Porsche Next', sans-serif;
+  z-index: 1;
+}
 
- #about-us-content {
+#about-us-content {
   height: 50vh;
   display: flex;
   text-align: left;
   margin-inline-start: 200px;
   flex-direction: column;
-  font-family:'Porsche Next', sans-serif;
-  
- }
+  font-family: 'Porsche Next', sans-serif;
+}
 
- #about-us-content h2 {
+#about-us-content h2 {
   font-size: 4rem;
   font-weight: normal;
- }
+}
 
- #about-us-content p {
+#about-us-content p {
   font-size: 1.5rem;
   font-weight: normal;
- }
+}
 
- .about-us-cards {
-  height: 100vh;
+/* Media queries for about-us page */
+@media screen and (max-width: 480px) {
+  #about-us-image h1 {
+    font-size: 4rem;
+  }
+
+  #about-us-content {
+    margin-inline-start: 20px;
+  }
+
+  #about-us-content h2 {
+    font-size: 3rem;
+  }
+
+  #about-us-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* About us cards */
+.card-title {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  padding: 50px;
+  color: black;
+  font-size: 3rem;
+  font-weight: lighter;
+  font-family: 'Porsche Next', sans-serif;
+  z-index: 1;
+}
+
+.about-us-cards {
+  width: 100%;
   display: grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   padding: 20px;
   gap: 40px;
   font-family: 'Porsche Next', sans-serif;
 }
 
 .card {
-  background-color: lightslategray;
+  background-color: #f5f5f5;
   border-radius: 5px;
-  box-shadow: 0 0 30px black;
+  box-shadow: 0 0 30px #a9a9a9;
 }
 
 .container {
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
 }
 
 .details {
@@ -224,64 +290,398 @@
 }
 
 .details>h3 {
-  color: #ffffff;
+  color: black;
   font-weight: 600;
   font-size: 18px;
   margin: 10px 0 15px 0;
 }
 
-.detals p {
-  color: whitesmoke;
+.details p {
+  color: black;
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
 }
 
-/* .container:after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.details a{
+  color: #D6181E;
+  font-weight: 600;
 }
-
-.card1>.container:after {
-  background-image: linear-gradient(135deg, blue, hotpink);
-}
-
-.card2>.container:after {
-  background-image: linear-gradient(135deg, cornblue, lightpink);
-}
-
-.card3>.container:after {
-  background-image: linear-gradient(135deg, blue, hotpink);
-} */
 
 .about-us-cards img {
   width: 100%;
   display: block;
   border-bottom: 20px 20px 0 0;
+  z-index: 1;
+}
+
+@media screen and (max-width: 480px) {
+  .about-us-cards {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-us-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    padding: 10px;
+    gap: 20px; 
+  }
+}
+/* Contact us page */
+
+/* card header */
+.contactus-card-header {
+  font-size: 3rem;
+  margin-top: 100px;
+}
+
+.contactus-card-header h1 {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  padding-top: 50px;
+  color: black;
+  font-size: 2.4rem;
+  font-weight: lighter;
+  font-family: 'Porsche Next', sans-serif;
+  z-index: 1;
+}
+
+.contactus-card-header p {
+  font-size: 1.2rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'Porsche Next', sans-serif;
+}
+
+/* Cards */
+.contactus-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 20px;
+  gap: 40px;
+  font-family: 'Porsche Next', sans-serif;
+}
+
+.contactus-card {
+  background-color: #ececec;
+  box-shadow: 0 0 30px #a9a9a9;
 }
 
 
- /* Media quieres for about-us page */
-  @media screen and (max-width: 480px) {
-    #about-us-image h1 {
-      font-size: 4rem;
-    }
+.contactus-details {
+  padding: 20px 10px;
+}
 
-    #about-us-content {
-      margin-inline-start: 20px;
-    }
+.details>h3 {
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0 15px 0;
+}
 
-    #about-us-content h2 {
-      font-size: 3rem;
-    }
+.contactus-details p {
+  color: black;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+}
 
-    #about-us-content p {
-      font-size: 1.2rem;
-    }
+.contactus-details a{
+  color: black;
+  font-weight: 550;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.employee-card-header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  padding-top: 50px;
+  z-index: 1;
+}
+
+.employee-card-header h1 {
+  font-size: 2.4rem;
+  font-weight: lighter;
+  font-family: 'Porsche Next', sans-serif;
+}
+
+.employee-card-header p {
+  color: darkslategrey;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  font-family: 'Porsche Next', sans-serif;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.employee-card-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 480px) {
+  .employee-card-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
   }
+}
 
+.employee-card {
+  box-shadow: none;
+  color: #141414;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin: 10px;
+  max-width: 315px;
+  min-width: 230px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  font-family: 'Porsche Next', sans-serif;
+}
+
+.employee-card * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.employee-card .profile-image img {
+  border-radius: 50%;
+  max-width: 100%;
+  height: 80px;
+  vertical-align: top;
+  float: left;
+}
+
+.employee-card figcaption {
+  background-color: #333333;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 25px;
+  position: relative;
+  width: 100%;
+}
+
+.employee-card figcaption:after {
+  border-color: transparent transparent #333333 transparent;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  bottom: 100%;
+  content: '';
+  height: 0;
+  left: 32px;
+  position: absolute;
+  width: 0;
+}
+
+.employee-card h3,
+.employee-card h4,
+.employee-card p {
+  margin: 0 0 5px;
+}
+
+.employee-card h3 {
+  font-weight: 600;
+  font-size: 1.2em;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.employee-card h4 {
+  color: #8c8c8c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.employee-card p {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.employee-card .icons {
+  padding: 20px 90px;
+}
+
+.employee-card i {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: normal;
+  opacity: 0.75;
+  padding: 10px 2px;
+}
+
+.employee-card i:hover {
+  opacity: 1;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+/* Google map location */
+
+.map {
+  height: auto;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.map h1 {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  padding-top: 50px;
+  color: black;
+  font-size: 2rem;
+  font-weight: lighter;
+  font-family: 'Porsche Next', sans-serif;
+  z-index: 1;
+}
+
+iframe {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 30px solid #0b0;
+}
+
+@media screen and (max-width: 768px) {
+  iframe {
+    width: 90%;
+  }
+}
+
+/* Footer */ 
+footer {
+  width: 100%;
+  position: relative;
+  background-color: #070617;
+  font-family: 'Porsche Next', sans-serif;
+  padding: 20px 0;
+}
+
+footer .contain {
+  max-width: 1200px; 
+  margin: 0 auto;
+  overflow: hidden; 
+}
+
+footer .col {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+
+footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Increase font size for better visibility */
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color: whitesmoke; /* Change color to improve visibility */
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+
+
+footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .col ul li {
+  color: whitesmoke;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+footer .col ul li:hover {
+  color: #ffffff;
+  transition: .1s;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); 
+  color: white;
+}
+
+@media only screen and (max-width: 950px) {
+  footer .col {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  footer .col {
+    width: 100%;
+  }
+  
+  footer h1 {
+    display: block;
+  }
+}
 
