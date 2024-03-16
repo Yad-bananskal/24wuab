@@ -185,6 +185,154 @@ header {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+/* Landing page */
+
+
+.slider{
+  width: 100%;
+  margin-top: 90px;
+  max-width: 100vw;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+.slider .list{
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: 1s;
+}
+
+.slider .list figure {
+  position: relative;
+}
+.slider .list img{
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+.slider .list figcaption {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Porsche Next', "Arial Narrow";
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+figcaption i {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.slider .list figcaption:hover {
+  color: red;
+  transition: 0.1s;
+}
+
+
+.slider .list .caption1 {
+  top: 50%;
+  left: 50%;
+}
+
+.slider .list .caption2 {
+  bottom: 5%;
+  left: 13%;  
+}
+
+.slider .list .caption3 {
+  top: 15%;
+  left: 8%;
+}
+
+.slider .list .caption4 {
+  bottom: 5%;
+  right: 10%;
+}
+
+.slider .list .caption5 {
+  top: 15%;
+  right: 10%;
+}
+
+.slider .buttons{
+  position: absolute;
+  top: 45%;
+  width: 95%;
+  left: 2.5%;
+  display: flex;
+  justify-content: space-between;
+}
+.slider .buttons button{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: none;
+  font-family: 'Porsche Next', sans-serif;
+  font-weight: bold;
+}
+
+.slider .buttons button:hover {
+  background-color: red;
+  color: white;
+  transition: 0.3s;
+}
+
+.slider .dots{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.slider .dots li{
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.slider .dots li.active{
+  background-color: red;
+}
+@media screen and (max-width: 768px){
+  .slider{
+      height: 400px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 /* About us */
 #about-us-image {
   width: 100%;
@@ -489,17 +637,6 @@ button:hover {
   width: 100%;
 }
 
-.employee-card figcaption:after {
-  border-color: transparent transparent #333333 transparent;
-  border-style: solid;
-  border-width: 0 10px 10px 10px;
-  bottom: 100%;
-  content: '';
-  height: 0;
-  left: 32px;
-  position: absolute;
-  width: 0;
-}
 
 .employee-card h3,
 .employee-card h4,
@@ -514,7 +651,7 @@ button:hover {
 }
 
 .employee-card h4 {
-  color: #8c8c8c;
+  color: white;
   font-weight: 400;
   letter-spacing: 2px;
 }
@@ -525,24 +662,6 @@ button:hover {
   opacity: 0.9;
 }
 
-.employee-card .icons {
-  padding: 20px 90px;
-}
-
-.employee-card i {
-  color: #ffffff;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: normal;
-  opacity: 0.75;
-  padding: 10px 2px;
-}
-
-.employee-card i:hover {
-  opacity: 1;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-}
 
 /* Google map location */
 
@@ -636,8 +755,8 @@ footer .col ul li {
 }
 
 footer .col ul li:hover {
-  color: #ffffff;
-  transition: .1s;
+  color: rgba(245, 245, 245, 0.673);
+  transition: 0.8s;
 }
 
 .fa {
@@ -650,6 +769,7 @@ footer .col ul li:hover {
 
 .fa:hover {
   opacity: 0.7;
+  transition: 0.5s;
 }
 
 /* Facebook */
