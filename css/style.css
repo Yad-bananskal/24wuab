@@ -196,16 +196,15 @@ header {
 
 
 /* Landing page */
-
-
 .slider{
   width: 100%;
   margin-top: 90px;
   max-width: 100vw;
-  height: 80vh;
+  height: 87.5vh;
   position: relative;
   overflow: hidden;
 }
+
 .slider .list{
   position: absolute;
   width: 100vw;
@@ -227,12 +226,11 @@ header {
 .slider .list figcaption {
   position: absolute;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-family: 'Porsche Next', "Arial Narrow";
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  cursor: p;
 }
 
 figcaption i {
@@ -245,30 +243,58 @@ figcaption i {
   transition: 0.1s;
 }
 
+.slider .list .caption2, .slider .list .caption4 {
+  bottom: 5%;
+}
 
 .slider .list .caption1 {
   top: 50%;
   left: 50%;
 }
 
-.slider .list .caption2 {
-  bottom: 5%;
-  left: 13%;  
+.slider .list .caption2, .slider .list .caption3 {
+  left: 12%;  
 }
 
-.slider .list .caption3 {
+.slider .list .caption3, .slider .list .caption5 {
   top: 15%;
-  left: 8%;
 }
 
-.slider .list .caption4 {
-  bottom: 5%;
+.slider .list .caption4, .slider .list .caption5{
   right: 10%;
 }
 
-.slider .list .caption5 {
-  top: 15%;
-  right: 10%;
+/* Media query for image slider */
+@media (max-width: 480px) {
+  .slider .list figcaption {
+    font-size: 1.6rem; 
+  }
+
+  figcaption i {
+    font-size: 1.2rem; 
+  }
+
+  .slider .list .caption2, .slider .list .caption4 {
+    bottom: 5%;
+  }
+  
+  .slider .list .caption1 {
+    top: 50%;
+    left: 50%;
+  }
+  
+  .slider .list .caption2, .slider .list .caption3 {
+    left: 20%;  
+  }
+  
+  .slider .list .caption3, .slider .list .caption5 {
+    top: 15%;
+  }
+  
+  .slider .list .caption4, .slider .list .caption5{
+    text-align: right;
+    left: 20%;
+  }
 }
 
 .slider .buttons{
@@ -325,12 +351,61 @@ figcaption i {
 
 
 
+/* Info section landing page */
+
+.info-section-container {
+  position: relative;
+  height: 60vh;
+}
+
+.info-section-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/img/mclaren.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80%;
+  clip-path: polygon(47% 0, 100% 0, 100% 100%, 20% 100%);
+}
+
+.info-section-container h1 {
+  padding-top: 30px;
+}
+
+.info-section-container h1, .info-section-container p {
+  position: relative;
+  align-items: left;
+  font-family: 'Porsche Next';
+  width: 40%;
+  padding-inline-start: 15px;
+}
+
+
+/* Landing page thumbnail slider */
 
 
 
+@media (max-width: 950px) {
 
+  .info-section-container h1 {
+    font-size: 1.6rem;
+  }
 
+  .info-section-container p {
+    font-size: 1.2rem;
+  }
 
+  .info-section-container::before {
+    background-image: url(/img/portrait_mc.jpg);
+    background-size: 100%;
+    clip-path: polygon(47% 0, 100% 0%, 100% 100%, 48% 100%);
+
+  }
+}
 
 
 /* About us */
@@ -361,7 +436,7 @@ figcaption i {
 }
 
 #about-us-content {
-  height: 50vh;
+  height: 30vh;
   display: flex;
   text-align: left;
   margin-inline-start: 200px;
@@ -803,5 +878,8 @@ footer .col ul li:hover {
   footer h1 {
     display: block;
   }
+  
 }
+
+
 
