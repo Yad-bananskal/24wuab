@@ -24,7 +24,7 @@ a {
 
 #nav-header a {
   color: white;
-  pointer-events: auto;
+  pointer-events: all;
 }
 
 /* Navbar */
@@ -92,7 +92,7 @@ header {
   height: 44px;
   cursor: pointer;
   transition: 1s;
-  pointer-events: auto;
+  pointer-events: all;
   z-index: 9999;
 }
 
@@ -105,7 +105,7 @@ header {
   background-color: #ffffff;
   transition: 1s;
   border-radius: 4px;
-  pointer-events: auto;
+  pointer-events: all;
 }
 
 #line1 {
@@ -185,18 +185,8 @@ header {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Landing page */
-.slider{
+.slider {
   width: 100%;
   margin-top: 90px;
   max-width: 100vw;
@@ -205,7 +195,7 @@ header {
   overflow: hidden;
 }
 
-.slider .list{
+.slider .list {
   position: absolute;
   width: 100vw;
   height: 100%;
@@ -214,14 +204,17 @@ header {
   display: flex;
   transition: 1s;
 }
+
 .slider .list figure {
   position: relative;
 }
-.slider .list img{
+
+.slider .list img {
   width: 100vw;
   height: 100%;
   object-fit: cover;
 }
+
 .slider .list figcaption {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -242,69 +235,74 @@ figcaption i {
   transition: 0.1s;
 }
 
-.slider .list .caption2, .slider .list .caption4 {
-  bottom: 5%;
-}
-
 .slider .list .caption1 {
   top: 50%;
   left: 50%;
 }
 
-.slider .list .caption2, .slider .list .caption3 {
-  left: 12%;  
+.slider .list .caption2,
+.slider .list .caption3 {
+  left: 12%;
 }
 
-.slider .list .caption3, .slider .list .caption5 {
+.slider .list .caption3,
+.slider .list .caption5 {
   top: 15%;
 }
 
-.slider .list .caption4, .slider .list .caption5{
+.slider .list .caption4,
+.slider .list .caption5 {
   right: 8%;
-  
+}
+
+/* Apply bottom: 5% to slide2 and slide4 */
+.slider .list .caption2,
+.slider .list .caption4 {
+  bottom: 5%;
 }
 
 /* Media query for image slider */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .slider .list figcaption {
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
   }
 
   figcaption i {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
-  .slider .list .caption2, .slider .list .caption4 {
-    bottom: 5%;
+  .slider .list .caption2,
+  .slider .list .caption3 {
+    left: 30%;
   }
-  
-  .slider .list .caption1 {
-    top: 50%;
-    left: 50%;
-  }
-  
-  .slider .list .caption2, .slider .list .caption3 {
-    left: 30%;  
-  }
-  
-  .slider .list .caption3, .slider .list .caption5 {
-    top: 15%;
-  }
-  
-  .slider .list .caption4, .slider .list .caption5{
+
+  .slider .list .caption4,
+  .slider .list .caption5 {
     right: 1%;
+    bottom: 5%;
   }
 }
 
-.slider .buttons{
+@media screen and (max-width: 768px) {
+  .slider {
+    height: 400px;
+  }
+}
+
+.slider .buttons,
+.slider .dots {
   position: absolute;
+}
+
+.slider .buttons {
   top: 45%;
   width: 95%;
   left: 2.5%;
   display: flex;
   justify-content: space-between;
 }
-.slider .buttons button{
+
+.slider .buttons button {
   width: 50px;
   height: 50px;
   background-color: white;
@@ -319,8 +317,7 @@ figcaption i {
   transition: 0.3s;
 }
 
-.slider .dots{
-  position: absolute;
+.slider .dots {
   bottom: 10px;
   left: 0;
   color: #fff;
@@ -330,7 +327,8 @@ figcaption i {
   display: flex;
   justify-content: center;
 }
-.slider .dots li{
+
+.slider .dots li {
   list-style: none;
   width: 10px;
   height: 10px;
@@ -339,16 +337,66 @@ figcaption i {
   border-radius: 20px;
   transition: 0.5s;
 }
-.slider .dots li.active{
-  background-color: red;
+
+.slider .dots li.active {
+  background-color: #ff0000;
 }
-@media screen and (max-width: 768px){
-  .slider{
-      height: 400px;
+
+/* Discover cards */
+
+.discover-header h2 {
+  font-family: 'Porsche Next', 'Arial Narrow',sans-serif; 
+  margin: 50px 0 0 40px;
+  font-size: 2.5rem;
+}
+
+.discover-cards {
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Porsche Next', 'Arial Narrow',sans-serif; 
+  gap: 3px;
+}
+
+.discover-card a {
+  color: #000000;
+} 
+
+.discover-cards i {
+  color: red;
+}
+
+.discover-card img:hover {
+  box-sizing: border-box;
+  outline: 3px solid red;
+}
+
+@media only screen and (max-width: 600px) {
+  .discover-header h2 {
+    font-family: 'Porsche Next', 'Arial Narrow',sans-serif; 
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .discover-cards {
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Porsche Next', 'Arial Narrow',sans-serif; 
+    gap: 3px;
+  }
+
+  .discover-cards i {
+    color: red;
+  }
+
+  .discover-card img:hover {
+    box-sizing: border-box;
+    outline: 3px solid red;
   }
 }
-
-
 
 /* Info section landing page */
 
@@ -377,17 +425,12 @@ figcaption i {
 
 .info-section-container h1, .info-section-container p {
   position: relative;
-  align-items: left;
   font-family: 'Porsche Next';
   width: 40%;
   padding-inline-start: 15px;
 }
 
-
 /* Landing page thumbnail slider */
-
-
-
 @media (max-width: 950px) {
 
   .info-section-container h1 {
@@ -405,7 +448,6 @@ figcaption i {
 
   }
 }
-
 
 /* About us */
 #about-us-image {
@@ -504,7 +546,6 @@ figcaption i {
 
 .container {
   position: relative;
-  /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
 }
 
 .details {
@@ -533,7 +574,7 @@ figcaption i {
 .about-us-cards img {
   width: 100%;
   display: block;
-  border-bottom: 20px 20px 0 0;
+  border-bottom: 20px;
   z-index: 1;
 }
 
@@ -550,7 +591,6 @@ figcaption i {
     gap: 20px; 
   }
 }
-
 
 /* Contact us page */
 
@@ -713,7 +753,6 @@ button:hover {
   width: 100%;
 }
 
-
 .employee-card h3,
 .employee-card h4,
 .employee-card p {
@@ -738,9 +777,7 @@ button:hover {
   opacity: 0.9;
 }
 
-
 /* Google map location */
-
 .map {
   height: auto;
   width: 100%;
@@ -800,15 +837,14 @@ footer .col {
 footer .col h1 {
   margin: 0;
   padding: 0;
-  font-size: 16px; /* Increase font size for better visibility */
+  font-size: 16px; 
   line-height: 17px;
   padding: 20px 0px 5px 0px;
-  color: whitesmoke; /* Change color to improve visibility */
+  color: whitesmoke; 
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.250em;
 }
-
 
 footer .col ul {
   list-style-type: none;
@@ -882,9 +918,7 @@ footer .col ul li:hover {
   
 }
 
-
 /*Product page*/
-
 .product-card-title {
   display: flex;
   text-align: center;
@@ -943,17 +977,14 @@ footer .col ul li:hover {
 }
 
 .product-cards img {
-  width: 100%; /* This will make the image width responsive */
-  height: auto; /* This will maintain the aspect ratio */
+  width: 100%;
+  height: auto;
   padding: 0 10px;
   display: block;
-  border-bottom: 20px 20px 0 0;
   z-index: 1;
   margin: auto;
   position: relative;
 }
-
-
 
 
 @media screen and (max-width: 768px) {

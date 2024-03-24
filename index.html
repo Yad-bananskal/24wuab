@@ -15,10 +15,10 @@
   <header>
     <nav id="nav">
       <ul>
-        <li><a href="index.html">Hem</a></li>
-        <li><a href="products.html">Produkter</a></li>
-        <li><a href="aboutus.html">Om oss </a></li>
-        <li><a href="contactus.html">Kontakta oss </a></li>
+        <li><a href="index.html" alt="Link to reach homepage">Hem</a></li>
+        <li><a href="products.html" alt="Link to reach products page">Produkter</a></li>
+        <li><a href="aboutus.html" alt="Link to reach about us page">Om oss </a></li>
+        <li><a href="contactus.html" alt="Link to reach contact us page">Kontakta oss</a></li>
       </ul>
     </nav>
     <div id="hamburger">
@@ -26,24 +26,20 @@
       <span class="inner_line" id="line2"></span>
       <span class="inner_line" id="line3"></span>
     </div>
-    <h1 id="nav-header"><a href="#">Ace Auto</a></h1>
+    <h1 id="nav-header"><a href="index.html">Ace Auto</a></h1>
     <a href="index.html">
-      <img id="logo-img" src="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png" alt="">
+      <img id="logo-img" src="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png" alt="Porsche logo">
     </a>
   </header>
-
-
-
   <div class="slider">
     <div class="list">
         <figure class="item">
             <img src="img/sportmade.jpg" alt="Picture of a red cars headlight">
-            <a href=""><figcaption class="caption1"><i class="fa-solid fa-chevron-right"></i>Sportmade.</figcaption></a>
+            <figcaption class="caption1"><i class="fa-solid fa-chevron-right"></i>Sportmade.</figcaption>
         </figure>
         <figure class="item">
             <img src="img/gbglass-porsche.jpg" alt="Picture of a red sportscar with gb glace stickers">
-            <a href=""><figcaption class="caption2"><i class="fa-solid fa-chevron-right"></i>Choose Boldly.</figcaption></a>
-            
+            <figcaption class="caption2"><i class="fa-solid fa-chevron-right"></i>Choose Boldly.</figcaption>
         </figure>
         <figure class="item">
             <img src="img/classy.jpg" alt="">
@@ -51,11 +47,11 @@
         </figure>
         <figure class="item">
             <img src="img/911dakar.jpeg" alt="">
-            <figcaption class="caption4"><i class="fa-solid fa-chevron-right"></i>Explore the world</figcaption>
+            <figcaption class="caption4"><i class="fa-solid fa-chevron-right"></i>Explore.</figcaption>
         </figure>
         <figure class="item">
-            <img src="img/jeep (1).jpg" alt="">
-            <figcaption class="caption5"><i class="fa-solid fa-chevron-right"></i>Poopdidiscoop</figcaption>
+            <img src="img/jeep.jpg" alt="">
+            <figcaption class="caption5"><i class="fa-solid fa-chevron-right"></i>Discover.</figcaption>
         </figure>
     </div>
     <div class="buttons">
@@ -70,12 +66,42 @@
         <li></li>
     </ul>
 </div>
-<script src="js/test.js"></script>
+<script src="js/slider.js"></script>
 <div class="info-section-container">
   <h1>McLaren P1</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos saepe, est obcaecati quaerat similique veritatis. Consectetur ullam incidunt repellat, esse eos eius accusamus placeat ipsam recusandae totam ipsum dolor nobis.</p>
+</div>  
+<div class="discover-header">
+  <h2>
+    Upptäck
+  </h2>
 </div>
-
+<div class="discover-cards">
+  <div class="discover-card">
+    <a href="#">
+    <img src="https://files.porsche.com/filestore/image/sweden/sv/4-3_homepage-teaser-electric-macan/normal/d610c0bd-bf7c-11ee-8116-005056bbdc38;sL;twebp/porsche-normal.webp" alt="Picture of two cars on the highway">
+    <p><i class="fa-solid fa-chevron-right"></i> Få nyheter om helt nya bilar</p>
+  </a>
+  </div>
+  <div class="discover-card">
+    <a href="#">
+    <img src="https://files.porsche.com/filestore/image/multimedia/sv/homepage-teaser-pse-motorsport/normal/a4e91d9f-985d-11eb-80d4-005056bbdc38;sL;twebp/porsche-normal.webp" alt="Picture of a red car from the side">
+    <p><i class="fa-solid fa-chevron-right"></i> Motorsport & Event</p>
+  </a>
+  </div>
+  <div class="discover-card">
+    <a href="#">
+    <img src="https://files.porsche.com/filestore/image/sweden/none/homepage-teaser-sportscar-together-day/normal/f9f98e51-d58b-11ee-811a-005056bbdc38;sL;twebp/porsche-normal.webp" alt="Picture of a porsche on the highway">
+    <p><i class="fa-solid fa-chevron-right"></i> Registrera dig för Ace Auto's nyhetsbrev</p>
+  </a>
+  </div>
+  <div class="discover-card">
+    <a href="#">
+    <img src="https://files.porsche.com/filestore/image/sweden/sv/homepage-teaser-contactus/normal/313c3623-1aea-11e8-bbc5-0019999cd470;sL;twebp/porsche-normal.webp" alt="picture of a employees in front of computer handling customer service">
+    <p><i class="fa-solid fa-chevron-right"></i> Service</p>
+  </a>
+  </div>
+</div>
   <footer>
     <div class="contain">
       <div class="col">
@@ -118,11 +144,12 @@
       <div class="col social">
         <h1>Social</h1>
         <ul>
-          <li><a href="#" class="fa fa-facebook"></a></li>
-          <li><a href="#" class="fa fa-twitter"></a></li>
-          <li><a href="#" class="fa fa-instagram"></a></li>
+          <li><a title="External link to facebook.com" href="#" class="fa fa-facebook"></a></li>
+          <li><a title="External link to x.com" href="#" class="fa fa-twitter"></a></li>
+          <li><a title="External link to instagram.com" href="#" class="fa fa-instagram"></a></li>
         </ul>
       </div>
+    </div>
   </footer>  
 </body>
 </html>
